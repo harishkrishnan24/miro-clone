@@ -1,12 +1,14 @@
 "use client";
 
+import { colorToCss } from "@/lib/utils";
 import { LayerType } from "@/types/canvas";
 import { useStorage } from "@liveblocks/react/suspense";
 import { memo } from "react";
-import Rectangle from "./rectangle";
 import Ellipse from "./ellipse";
-import Text from "./text";
 import Note from "./Note";
+import Path from "./path";
+import Rectangle from "./rectangle";
+import Text from "./text";
 
 interface LayerPreviewProps {
   id: string;
@@ -59,8 +61,20 @@ const LayerPreview = memo(
             selectionColor={selectionColor}
           />
         );
+      case LayerType.Path:
+        return (
+          <Path
+            key={id}
+            points={layer.points}
+            onPointerDown={(e) => onLayerPointerDown(e, id)}
+            stroke={selectionColor}
+            x={layer.x}
+            y={layer.y}
+            fill={layer.fill ? colorToCss(layer.fill) : "none"}
+          />
+        );
       default:
-        console.warn(`Unsupported layer type: ${layer.type}`);
+        console.warn(`Unsupported layer type`);
         return null;
     }
   }
