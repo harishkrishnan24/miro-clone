@@ -85,7 +85,7 @@ export const portal = action({
 export const fulfill = internalAction({
   args: { signature: v.string(), payload: v.string() },
   handler: async (ctx, { signature, payload }) => {
-    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET! as string;
+    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
 
     try {
       const event = stripe.webhooks.constructEvent(

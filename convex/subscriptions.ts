@@ -6,7 +6,7 @@ export const get = internalQuery({
   handler: async (ctx, args) => {
     return await ctx.db
       .query("orgSubscription")
-      .withIndex("by_org", (q) => q.eq("orgId", args.orgId as string))
+      .withIndex("by_org", (q) => q.eq("orgId", args.orgId))
       .unique();
   },
 });
