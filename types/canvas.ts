@@ -59,7 +59,7 @@ export type TextLayer = {
 };
 
 export type NoteLayer = {
-  type: LayerType.Text;
+  type: LayerType.Note;
   x: number;
   y: number;
   height: number;
