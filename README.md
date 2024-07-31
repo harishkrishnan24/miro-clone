@@ -4,6 +4,15 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Project Features
+- Server-side Rendering using Next.js
+- TailwindCSS and ShadCn UI for styling
+- Convex as real-time backend & database
+- TypeScript for static type-checking
+- Liveblocks for real-time collaboration
+- Stripe for handling subscriptions. There is a pro mode for creating more than 2 boards in an org
+- Clerk for handling Authentication & Organization
+
 ## Getting Started
 
 First, run the development server:
